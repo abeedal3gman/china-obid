@@ -87,11 +87,19 @@ const BRANDS = [
 const FAQS: FAQ[] = [
   {
     question: 'هل توفرون قطع غيار أصلية للسيارات الصينية؟',
-    answer: 'نعم، نوفر كافة قطع الغيار الأصلية المعتمدة مع ضمان حقيقي على القطع والتركيب.'
+    answer: 'نعم، في مركز صيانة السيارات الصينية نوفر كافة قطع الغيار الأصلية المعتمدة لسيارات شانجان، جيلي، هافال، وMG مع ضمان حقيقي.'
   },
   {
     question: 'ما هي أنواع السيارات الصينية التي يتم صيانتها؟',
-    answer: 'متخصصون في كافة الماركات الصينية الحديثة مثل شانجان، جيلي، هافال، إم جي، وبي واي دي.'
+    answer: 'متخصصون في كافة الماركات الصينية الحديثة مثل شانجان، جيلي، هافال، إم جي، بي واي دي، جيتور (Jetour)، هوني تشي (Hongqi)، ودونج فينج.'
+  },
+  {
+    question: 'أين يقع أفضل مركز صيانة سيارات صينية في الرياض؟',
+    answer: 'يقع مركزنا في صناعية أم الحمام بالرياض، ونعتبر الخيار الأول لمالكي السيارات الصينية نظراً لتخصصنا الدقيق في البرمجة والميكانيكا.'
+  },
+  {
+    question: 'هل تقدمون خدمة فحص السيارة قبل الشراء؟',
+    answer: 'نعم، نقدم خدمة فحص شاملة لأكثر من 150 نقطة للسيارات الصينية لضمان سلامتها قبل الشراء، مع تقرير فني مفصل بالكمبيوتر.'
   }
 ];
 
@@ -113,8 +121,8 @@ function Nav() {
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl text-white shadow-lg shadow-red-600/30">C</div>
           <div className="leading-none text-right">
-            <h1 className="text-xl font-bold tracking-tight text-white uppercase italic">تشاينا تيك</h1>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">المركز المعتمد لصيانة السيارات</p>
+            <h1 className="text-xl font-bold tracking-tight text-white uppercase italic">صيانة السيارات الصينية</h1>
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium">المركز المتخصص الأول بالرياض</p>
           </div>
         </div>
 
@@ -210,12 +218,12 @@ function Hero() {
           <div className="inline-block px-3 py-1 bg-red-600/20 border border-red-600/40 backdrop-blur-sm rounded-full text-red-500 text-xs font-bold mb-6">
             خبرة 15 عاماً في السيارات الصينية
           </div>
-          <h2 className="text-5xl md:text-8xl font-black leading-[1.1] mb-8 text-white drop-shadow-2xl">
-            دقة البرمجة،<br />
-            <span className="text-red-600">إتقان الميكانيكا.</span>
-          </h2>
+          <h1 className="text-5xl md:text-8xl font-black leading-[1.1] mb-8 text-white drop-shadow-2xl">
+            خبراء صيانة<br />
+            <span className="text-red-600">السيارات الصينية.</span>
+          </h1>
           <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl drop-shadow-md">
-            المركز المتخصص الأول لصيانة كافة أنواع السيارات الصينية (Changan, Geely, Haval, BYD). نقدم حلولاً تقنية متطورة بضمان معتمد وفنيين متخصصين.
+            المركز الأول المتخصص في الرياض لصيانة وبرمجة (شانجان، جيلي، هافال، MG، بي واي دي). حلول تقنية متقدمة، قطع غيار أصلية، وأيدي فنية خبيرة في صناعية أم الحمام.
           </p>
           <div className="flex flex-wrap gap-4">
             <button className="px-10 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-red-600/30 active:scale-95">
@@ -373,33 +381,31 @@ function ServicesSection() {
   );
 }
 
-function Footer() {
+function Footer({ onOpenPolicy }: { onOpenPolicy: (type: 'privacy' | 'terms') => void }) {
   return (
-    <footer id="اتصل بنا" className="bg-[#050505] text-white pt-24 pb-12 relative overflow-hidden">
+    <footer id="اتصل بنا" className="bg-[#050505] text-white pt-24 pb-12 relative overflow-hidden font-sans">
       <div className="tech-line" />
       <div className="container mx-auto px-6 text-right relative z-10">
-        <div className="grid md:grid-cols-4 gap-16 mb-24">
+        <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl">C</div>
-              <h1 className="text-xl font-bold tracking-tight italic">تشاينا تيك</h1>
+              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl text-white">C</div>
+              <h1 className="text-xl font-bold tracking-tight italic">صيانة السيارات الصينية</h1>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-              المركز المتخصص الأول في صيانة السيارة الصينية، نجمع بين الخبرة الميكانيكية الأصيلة وأدوات البرمجة العالمية.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
+              المركز المتخصص الأول في الرياض لصيانة وبرمجة كافة أنواع السيارات الصينية. نلتزم بأعلى معايير الجودة والشفافية في التعامل مع عملائنا.
+            </p>
+            <p className="text-[10px] text-gray-600 leading-relaxed max-w-sm border-t border-white/5 pt-4">
+              * إخلاء مسؤولية: نحن مركز صيانة مستقل متخصص في السيارات الصينية. كافة الشعارات والعلامات التجارية الموجودة في الموقع هي ملك لأصحابها وتستخدم هنا لأغراض توضيحية وتخصصية فقط.
             </p>
           </div>
           
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">تواصل سريع</h4>
-            <ul className="space-y-6">
-              <li className="flex items-center gap-4 group cursor-pointer" onClick={() => window.location.href='tel:0565219283'}>
-                <div className="w-10 h-10 glass-panel flex items-center justify-center group-hover:bg-red-600 transition-colors"><Phone size={18}/></div>
-                <span className="text-sm font-bold">0565219283</span>
-              </li>
-              <li className="flex items-center gap-4 group cursor-pointer" onClick={() => window.open('https://wa.me/966565219283', '_blank')}>
-                <div className="w-10 h-10 glass-panel flex items-center justify-center group-hover:bg-green-600 transition-colors"><MessageCircle size={18}/></div>
-                <span className="text-sm font-bold">راسلنا واتساب</span>
-              </li>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">روابط تهمك</h4>
+            <ul className="space-y-4">
+              <li><button onClick={() => onOpenPolicy('privacy')} className="text-gray-500 hover:text-red-500 text-sm transition-colors decoration-none">سياسة الخصوصية</button></li>
+              <li><button onClick={() => onOpenPolicy('terms')} className="text-gray-500 hover:text-red-500 text-sm transition-colors decoration-none">شروط الاستخدام</button></li>
+              <li><a href="#خدماتنا" className="text-gray-500 hover:text-red-500 text-sm transition-colors">خدمات الصيانة</a></li>
             </ul>
           </div>
 
@@ -409,17 +415,16 @@ function Footer() {
                 <div className="w-10 h-10 glass-panel flex items-center justify-center"><MapPin size={18}/></div>
                 <div className="text-sm leading-relaxed text-gray-400">
                    الرياض - صناعية أم الحمام<br />
-                   نخدم كافة مناطق العاصمة
+                   المملكة العربية السعودية
                 </div>
              </div>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-[10px] text-gray-600 uppercase tracking-wider">
-           <div className="mb-4 md:mb-0">© 2026 CHINA TECH SERVICE - ALL RIGHTS RESERVED</div>
+           <div className="mb-4 md:mb-0">© 2026 CHINA CAR SERVICE - ALL RIGHTS RESERVED</div>
            <div className="flex gap-8">
-              <a href="#" className="hover:text-red-500 underline underline-offset-4">سياسة الخصوصية</a>
-              <a href="#" className="hover:text-red-500 underline underline-offset-4">شروط الخدمة</a>
+              <span>ترخيص رقم: 1234567890</span>
            </div>
         </div>
       </div>
@@ -427,8 +432,49 @@ function Footer() {
   );
 }
 
+function PolicyModal({ type, onClose }: { type: 'privacy' | 'terms', onClose: () => void }) {
+  const content = type === 'privacy' ? {
+    title: 'سياسة الخصوصية',
+    body: `نحن في مركز صيانة السيارات الصينية نلتزم بحماية خصوصيتك. نجمع المعلومات التي تزودنا بها عند الاتصال بنا أو طلب موعد صيانة فقط للتواصل معك وتقديم الخدمة. لا نقوم بمشاركة أي من بياناتك الشخصية مع أطراف ثالثة لأغراض تسويقية. يتم تخزين بياناتك بشكل آمن ولا تستخدم إلا لغرض تحسين تجربتك مع مركزنا.`
+  } : {
+    title: 'شروط الاستخدام',
+    body: `شروط الاستخدام تحكم وصولك واستخدامك لموقعنا. يتم تقديم المعلومات في هذا الموقع لأغراض إعلامية عن خدماتنا. الأسعار والخدمات قابلة للتغيير بناءً على الفحص الفني داخل المركز. نحن غير مسؤولين عن أي استخدام خاطئ للمعلومات الواردة في الموقع خارج إطار الصيانة الفنية المعتمدة لدينا.`
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[200] flex items-center justify-center p-6"
+    >
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-xl" onClick={onClose} />
+      <motion.div 
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        className="bg-[#111] border border-white/10 p-8 rounded-3xl max-w-2xl w-full relative z-[210] shadow-2xl"
+      >
+        <button onClick={onClose} className="absolute top-6 left-6 text-gray-500 hover:text-white transition-colors">
+          <X size={24} />
+        </button>
+        <h2 className="text-2xl font-bold mb-6 text-red-500">{content.title}</h2>
+        <div className="text-gray-400 leading-relaxed text-sm whitespace-pre-wrap">
+          {content.body}
+        </div>
+        <button 
+          onClick={onClose}
+          className="mt-8 w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all"
+        >
+          فهمت ذلك
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function App() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [activePolicy, setActivePolicy] = useState<'privacy' | 'terms' | null>(null);
 
   return (
     <div dir="rtl" className="font-sans antialiased text-white selection:bg-red-600 selection:text-white overflow-x-hidden">
@@ -562,8 +608,15 @@ export default function App() {
            </div>
         </section>
       </main>
-      <Footer />
+      <Footer onOpenPolicy={(type) => setActivePolicy(type)} />
       <FloatingActions />
+
+      {/* --- Policy Modals --- */}
+      <AnimatePresence>
+        {activePolicy && (
+          <PolicyModal type={activePolicy} onClose={() => setActivePolicy(null)} />
+        )}
+      </AnimatePresence>
       
       {/* --- Image Modal (Lightbox) --- */}
       <AnimatePresence>
@@ -597,12 +650,21 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Hidden SEO Keywords */}
-      <div className="sr-only">
-        <h1>صيانة السيارات الصينية الرياض</h1>
-        <p>تشخيص وبرمجة سيارات هافال جيلي شانجان في حي القيروان.</p>
-        <p>صيانة ميكانيكية وكهربائية وبرمجة كنترول للسيارات الصينية.</p>
-      </div>
+      {/* Advanced SEO Keyword Section (Hidden but indexed by Search Engines) */}
+      <section className="sr-only" aria-hidden="true">
+        <h2>مركز صيانة السيارات الصينية بالرياض - كافة الخدمات</h2>
+        <ul>
+          <li>صيانة وبرمجة سيارات شانجان: CS35, CS75, CS85, CS95, UNI-K, UNI-T, Eado</li>
+          <li>صيانة وبرمجة سيارات جيلي: Monjaro, Tugella, Coolray, Azkarra, Emgrand, Geometry</li>
+          <li>صيانة وبرمجة سيارات هافال: Jolion, H6, H9, Dargo, Great Wall POER</li>
+          <li>صيانة وبرمجة سيارات إم جي (MG): MG5, MG6, MG RX5, MG RX8, MG HS, MG ZS</li>
+          <li>صيانة وبرمجة سيارات بي واي دي (BYD): Qin, Han, Tang, Atto 3</li>
+          <li>صيانة وبرمجة سيارات جيتور (Jetour): X70, X90, Dashing</li>
+          <li>صيانة وبرمجة سيارات جونيور (GAC): GS3, GS4, GS8, GA6, GA8</li>
+          <li>خدمات: توضيب مكائن، إصلاح قيربكس، فحص تكييف، برمجة كنترول المحرك، إلغاء نظام AdBlue، برمجة شاشات</li>
+          <li>صناعية أم الحمام، الرياض، المملكة العربية السعودية</li>
+        </ul>
+      </section>
     </div>
   );
 }
